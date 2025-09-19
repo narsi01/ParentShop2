@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ParentShop - Everything for Growing Families</title>
+    <meta name="description" content="ParentShop offers premium products for new parents and growing families. From baby essentials to toddler gear, we have everything you need.">
+    
+    <!-- Segment Analytics -->
+    <script>
+      !function(){var i="analytics",analytics=window[i]=window[i]||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","screen","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware","register"];analytics.factory=function(e){return function(){if(window[i].initialized)return window[i][e].apply(window[i],arguments);var n=Array.prototype.slice.call(arguments);if(["track","screen","alias","group","page","identify"].indexOf(e)>-1){var c=document.querySelector("link[rel='canonical']");n.push({__t:"bpc",c:c&&c.getAttribute("href")||void 0,p:location.pathname,u:location.href,s:location.search,t:document.title,r:document.referrer})}n.unshift(e);analytics.push(n);return analytics}};for(var n=0;n<analytics.methods.length;n++){var key=analytics.methods[n];analytics[key]=analytics.factory(key)}analytics.load=function(key,n){var t=document.createElement("script");t.type="text/javascript";t.async=!0;t.setAttribute("data-global-segment-analytics-key",i);t.src="https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js";var r=document.getElementsByTagName("script")[0];r.parentNode.insertBefore(t,r);analytics._loadOptions=n};analytics._writeKey="kCp7oSFDjUYHhyt0I3WBgztmfYZ72M4S";;analytics.SNIPPET_VERSION="5.2.0";
+      analytics.load("kCp7oSFDjUYHhyt0I3WBgztmfYZ72M4S");
+      analytics.page();
+      }}();
+    </script>
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <a href="index.html" onclick="trackClick('Logo Click', {location: 'header'})">
+                        <span class="logo-text">ParentShop</span>
+                    </a>
+                </div>
+                
+                <nav class="nav">
+                    <a href="shop.html" onclick="trackClick('Navigation Click', {page: 'Shop'})">Shop</a>
+                    <a href="blog.html" onclick="trackClick('Navigation Click', {page: 'Blog'})">Growing Family Blog</a>
+                    <a href="about.html" onclick="trackClick('Navigation Click', {page: 'About'})">About</a>
+                    <a href="contact.html" onclick="trackClick('Navigation Click', {page: 'Contact'})">Contact</a>
+                </nav>
+                
+                <div class="header-actions">
+                    <button class="search-btn" onclick="trackClick('Search Button Click')">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
+                    </button>
+                    <button class="cart-btn" onclick="trackClick('Cart Button Click'); openCart()">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 22C9.55228 22 10 21.5523 10 21C10 20.4477 9.55228 20 9 20C8.44772 20 8 20.4477 8 21C8 21.5523 8.44772 22 9 22Z"></path>
+                            <path d="M20 22C20.5523 22 21 21.5523 21 21C21 20.4477 20.5523 20 20 20C19.4477 20 19 20.4477 19 21C19 21.5523 19.4477 22 20 22Z"></path>
+                            <path d="M1 1H5L7.68 14.39C7.77144 14.8504 8.02191 15.264 8.38755 15.5583C8.75318 15.8526 9.2107 16.009 9.68 16H19.4C19.8693 16.009 20.3268 15.8526 20.6925 15.5583C21.0581 15.264 21.3086 14.8504 21.4 14.39L23 6H6"></path>
+                        </svg>
+                        <span class="cart-count">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">Everything for your growing family</h1>
+                    <p class="hero-subtitle">From our Growing Family blog to curated products, we're here to support every step of your parenting journey with thoughtfully designed essentials.</p>
+                    <div class="hero-actions">
+                        <button class="btn btn-primary" onclick="trackClick('Hero CTA Click', {action: 'Shop Now'}); window.location.href='shop.html'">
+                            Shop Now
+                        </button>
+                        <button class="btn btn-secondary" onclick="trackClick('Hero CTA Click', {action: 'Learn Our Story'}); window.location.href='about.html'">
+                            Learn Our Story
+                        </button>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="/placeholder.svg?height=600&width=800" alt="Happy family in nursery" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Categories -->
+    <section class="categories">
+        <div class="container">
+            <h2 class="section-title">Shop by Category</h2>
+            <div class="categories-grid">
+                <div class="category-card" onclick="trackClick('Category Click', {category: 'Baby Essentials'}); window.location.href='shop.html?category=baby'">
+                    <img src="/placeholder.svg?height=300&width=400" alt="Baby Essentials" loading="lazy">
+                    <h3>Baby Essentials</h3>
+                    <p>Everything you need for your newborn</p>
+                </div>
+                <div class="category-card" onclick="trackClick('Category Click', {category: 'Toddler Gear'}); window.location.href='shop.html?category=toddler'">
+                    <img src="/placeholder.svg?height=300&width=400" alt="Toddler Gear" loading="lazy">
+                    <h3>Toddler Gear</h3>
+                    <p>Growing with your little explorer</p>
+                </div>
+                <div class="category-card" onclick="trackClick('Category Click', {category: 'Parent Care'}); window.location.href='shop.html?category=parent'">
+                    <img src="/placeholder.svg?height=300&width=400" alt="Parent Care" loading="lazy">
+                    <h3>Parent Care</h3>
+                    <p>Self-care essentials for parents</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-products">
+        <div class="container">
+            <h2 class="section-title">Customer Favorites</h2>
+            <div class="products-grid">
+                <div class="product-card" onclick="trackClick('Product Click', {product_id: 'organic-baby-blanket', product_name: 'Organic Cotton Baby Blanket', price: 45})">
+                    <img src="/placeholder.svg?height=300&width=300" alt="Organic Cotton Baby Blanket" loading="lazy">
+                    <div class="product-info">
+                        <h3>Organic Cotton Baby Blanket</h3>
+                        <p class="product-price">$45.00</p>
+                        <button class="btn btn-outline" onclick="event.stopPropagation(); addToCart('organic-baby-blanket', 'Organic Cotton Baby Blanket', 45)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card" onclick="trackClick('Product Click', {product_id: 'wooden-teething-ring', product_name: 'Wooden Teething Ring', price: 18})">
+                    <img src="/placeholder.svg?height=300&width=300" alt="Wooden Teething Ring" loading="lazy">
+                    <div class="product-info">
+                        <h3>Wooden Teething Ring</h3>
+                        <p class="product-price">$18.00</p>
+                        <button class="btn btn-outline" onclick="event.stopPropagation(); addToCart('wooden-teething-ring', 'Wooden Teething Ring', 18)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card" onclick="trackClick('Product Click', {product_id: 'nursing-pillow', product_name: 'Ergonomic Nursing Pillow', price: 65})">
+                    <img src="/placeholder.svg?height=300&width=300" alt="Ergonomic Nursing Pillow" loading="lazy">
+                    <div class="product-info">
+                        <h3>Ergonomic Nursing Pillow</h3>
+                        <p class="product-price">$65.00</p>
+                        <button class="btn btn-outline" onclick="event.stopPropagation(); addToCart('nursing-pillow', 'Ergonomic Nursing Pillow', 65)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card" onclick="trackClick('Product Click', {product_id: 'toddler-learning-blocks', product_name: 'Montessori Learning Blocks', price: 32})">
+                    <img src="/placeholder.svg?height=300&width=300" alt="Montessori Learning Blocks" loading="lazy">
+                    <div class="product-info">
+                        <h3>Montessori Learning Blocks</h3>
+                        <p class="product-price">$32.00</p>
+                        <button class="btn btn-outline" onclick="event.stopPropagation(); addToCart('toddler-learning-blocks', 'Montessori Learning Blocks', 32)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Signup -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Join the Growing Family Community</h2>
+                <p>Get parenting tips, product updates, and exclusive offers delivered to your inbox.</p>
+                <form class="newsletter-form" onsubmit="handleNewsletterSignup(event)">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ParentShop</h3>
+                    <p>Supporting growing families with thoughtfully curated products and expert advice from our Growing Family blog.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Shop</h4>
+                    <ul>
+                        <li><a href="shop.html?category=baby" onclick="trackClick('Footer Link Click', {link: 'Baby Essentials'})">Baby Essentials</a></li>
+                        <li><a href="shop.html?category=toddler" onclick="trackClick('Footer Link Click', {link: 'Toddler Gear'})">Toddler Gear</a></li>
+                        <li><a href="shop.html?category=parent" onclick="trackClick('Footer Link Click', {link: 'Parent Care'})">Parent Care</a></li>
+                        <li><a href="shop.html" onclick="trackClick('Footer Link Click', {link: 'All Products'})">All Products</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="contact.html" onclick="trackClick('Footer Link Click', {link: 'Contact Us'})">Contact Us</a></li>
+                        <li><a href="#" onclick="trackClick('Footer Link Click', {link: 'Shipping Info'})">Shipping Info</a></li>
+                        <li><a href="#" onclick="trackClick('Footer Link Click', {link: 'Returns'})">Returns</a></li>
+                        <li><a href="#" onclick="trackClick('Footer Link Click', {link: 'Size Guide'})">Size Guide</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Growing Family Blog</h4>
+                    <ul>
+                        <li><a href="blog.html" onclick="trackClick('Footer Link Click', {link: 'Latest Posts'})">Latest Posts</a></li>
+                        <li><a href="blog.html?category=newborn" onclick="trackClick('Footer Link Click', {link: 'Newborn Tips'})">Newborn Tips</a></li>
+                        <li><a href="blog.html?category=toddler" onclick="trackClick('Footer Link Click', {link: 'Toddler Development'})">Toddler Development</a></li>
+                        <li><a href="blog.html?category=parent" onclick="trackClick('Footer Link Click', {link: 'Parent Wellness'})">Parent Wellness</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ParentShop. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Shopping Cart Modal -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Shopping Cart</h3>
+                <button class="close-btn" onclick="closeCart()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="cart-items"></div>
+                <div class="cart-total">
+                    <strong>Total: $<span id="cart-total">0.00</span></strong>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" onclick="closeCart()">Continue Shopping</button>
+                <button class="btn btn-primary" onclick="checkout()">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
