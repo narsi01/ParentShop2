@@ -102,7 +102,7 @@ let filteredProducts = [...products]
 
 // Segment tracking functions
 function trackPageView(eventName, eventData) {
-  if (typeof analytics !== "undefined" && analytics) {
+  if (typeof analytics !== "undefined" && analytics && analytics.initialized) {
     analytics.page(eventName, {
       ...eventData,
       timestamp: new Date().toISOString(),
@@ -113,7 +113,7 @@ function trackPageView(eventName, eventData) {
 }
 
 function trackClick(eventName, eventData) {
-  if (typeof analytics !== "undefined" && analytics) {
+  if (typeof analytics !== "undefined" && analytics && analytics.initialized) {
     analytics.track(eventName, {
       ...eventData,
       timestamp: new Date().toISOString(),
