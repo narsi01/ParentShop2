@@ -1,0 +1,14 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Next.js build output
+.next/
+out/
+
+# Development files
+next-env.d.ts
+
+# Temporary files
+.DS_Store
+*.log
