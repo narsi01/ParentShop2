@@ -95,6 +95,16 @@ export default function HomePage() {
   }
 
   const handleNewsletterSignup = (email: string) => {
+    // Identify user when they sign up for newsletter
+    if (typeof window !== "undefined" && window.analytics) {
+      window.analytics.identify(email, {
+        email: email,
+        newsletter_signup: true,
+        signup_source: "homepage_hero",
+        signup_date: new Date().toISOString(),
+      })
+    }
+    
     trackEvent("Newsletter Signup", {
       email: email,
       source: "homepage_hero",
