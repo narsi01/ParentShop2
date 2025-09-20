@@ -68,7 +68,10 @@ export default function HomePage() {
 
   const trackEvent = (eventName: string, properties: any = {}) => {
     if (typeof window !== "undefined" && window.analytics) {
+      console.log("Segment Track:", eventName, properties)
       window.analytics.track(eventName, properties)
+    } else {
+      console.warn("Segment analytics not available - track call skipped:", eventName)
     }
   }
 
@@ -97,12 +100,15 @@ export default function HomePage() {
   const handleNewsletterSignup = (email: string) => {
     // Identify user when they sign up for newsletter
     if (typeof window !== "undefined" && window.analytics) {
+      console.log("Segment Identify: User newsletter signup", { email, source: "homepage_hero" })
       window.analytics.identify(email, {
         email: email,
         newsletter_signup: true,
         signup_source: "homepage_hero",
         signup_date: new Date().toISOString(),
       })
+    } else {
+      console.warn("Segment analytics not available - identify call skipped")
     }
     
     trackEvent("Newsletter Signup", {
