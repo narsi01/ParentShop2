@@ -6,7 +6,7 @@ const analytics = window.analytics
 
 // Segment tracking functions
 function trackClick(eventName, properties = {}) {
-  if (typeof analytics !== "undefined" && analytics) {
+  if (typeof analytics !== "undefined" && analytics && analytics.initialized) {
     analytics.track(eventName, {
       ...properties,
       timestamp: new Date().toISOString(),
@@ -17,7 +17,7 @@ function trackClick(eventName, properties = {}) {
 }
 
 function trackFormSubmit(formName, properties = {}) {
-  if (typeof analytics !== "undefined" && analytics) {
+  if (typeof analytics !== "undefined" && analytics && analytics.initialized) {
     analytics.track("Form Submitted", {
       form_name: formName,
       ...properties,
@@ -28,7 +28,7 @@ function trackFormSubmit(formName, properties = {}) {
 }
 
 function trackPageView(pageName, properties = {}) {
-  if (typeof analytics !== "undefined" && analytics) {
+  if (typeof analytics !== "undefined" && analytics && analytics.initialized) {
     analytics.page(pageName, {
       ...properties,
       timestamp: new Date().toISOString(),
@@ -179,7 +179,7 @@ function handleNewsletterSignup(event) {
   const email = event.target.querySelector('input[type="email"]').value
 
   // Identify user when they sign up for newsletter
-  if (typeof analytics !== "undefined" && analytics) {
+  if (typeof analytics !== "undefined" && analytics && analytics.initialized) {
     analytics.identify(email, {
       email: email,
       newsletter_signup: true,
