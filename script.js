@@ -1,12 +1,12 @@
 // Shopping cart functionality
 const cart = []
 
-// Declare analytics variable (assuming it's provided externally)
-let analytics
+// Reference to analytics object (provided by Segment snippet)
+const analytics = window.analytics
 
 // Segment tracking functions
 function trackClick(eventName, properties = {}) {
-  if (typeof analytics !== "undefined") {
+  if (typeof analytics !== "undefined" && analytics) {
     analytics.track(eventName, {
       ...properties,
       timestamp: new Date().toISOString(),
@@ -17,7 +17,7 @@ function trackClick(eventName, properties = {}) {
 }
 
 function trackFormSubmit(formName, properties = {}) {
-  if (typeof analytics !== "undefined") {
+  if (typeof analytics !== "undefined" && analytics) {
     analytics.track("Form Submitted", {
       form_name: formName,
       ...properties,
@@ -28,7 +28,7 @@ function trackFormSubmit(formName, properties = {}) {
 }
 
 function trackPageView(pageName, properties = {}) {
-  if (typeof analytics !== "undefined") {
+  if (typeof analytics !== "undefined" && analytics) {
     analytics.page(pageName, {
       ...properties,
       timestamp: new Date().toISOString(),
@@ -177,6 +177,16 @@ function checkout() {
 function handleNewsletterSignup(event) {
   event.preventDefault()
   const email = event.target.querySelector('input[type="email"]').value
+
+  // Identify user when they sign up for newsletter
+  if (typeof analytics !== "undefined" && analytics) {
+    analytics.identify(email, {
+      email: email,
+      newsletter_signup: true,
+      signup_source: "homepage",
+      signup_date: new Date().toISOString(),
+    })
+  }
 
   trackFormSubmit("Newsletter Signup", {
     email: email,

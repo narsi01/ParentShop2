@@ -100,13 +100,27 @@ const products = [
 
 let filteredProducts = [...products]
 
-// Declare trackPageView and trackClick functions
+// Segment tracking functions
 function trackPageView(eventName, eventData) {
-  console.log(`Event: ${eventName}`, eventData)
+  if (typeof analytics !== "undefined" && analytics) {
+    analytics.page(eventName, {
+      ...eventData,
+      timestamp: new Date().toISOString(),
+      page_url: window.location.href,
+      page_title: document.title,
+    })
+  }
 }
 
 function trackClick(eventName, eventData) {
-  console.log(`Event: ${eventName}`, eventData)
+  if (typeof analytics !== "undefined" && analytics) {
+    analytics.track(eventName, {
+      ...eventData,
+      timestamp: new Date().toISOString(),
+      page_url: window.location.href,
+      page_title: document.title,
+    })
+  }
 }
 
 // Initialize shop page
